@@ -1,0 +1,126 @@
+
+<!-- <div class="example-button-row">
+  <button mat-button>Basic</button>
+  <button mat-raised-button color="primary">Primary</button>
+  <button mat-button color="accent">Accent</button>
+  <button mat-button color="warn">Warn</button>
+  <button mat-button disabled>Disabled</button>
+
+</div> -->
+
+
+<form class="ship-form" [formGroup]="shipForm" (ngSubmit)="onShipAdded()">
+
+  <mat-form-field class="ship-full-width" appearance="fill">
+    <mat-label>Name</mat-label>
+    <input matInput placeholder="Ex. HPC Ship" formControlName="name"
+    (blur)="logValidationErrors()">
+
+   <mat-error *ngIf="formErrors.name">
+      {{ formErrors.name }}
+    </mat-error>
+  </mat-form-field>
+
+
+  <mat-form-field class="ship-full-width" appearance="fill">
+    <mat-label>Code</mat-label>
+    <input matInput placeholder="Ex. 10" formControlName="code"
+    (blur)="logValidationErrors()">
+
+    <mat-error *ngIf="formErrors.code">
+      {{ formErrors.code }}
+    </mat-error>
+  </mat-form-field>
+
+  <mat-form-field class="ship-full-width" appearance="fill">
+    <mat-label>Length</mat-label>
+    <input type="number" matInput placeholder="Ex. 10" formControlName="length"
+    (blur)="logValidationErrors()">
+    <mat-error *ngIf="formErrors.length">
+      {{ formErrors.length }}
+    </mat-error>
+  </mat-form-field>
+
+
+
+  <mat-form-field class="ship-full-width" appearance="fill">
+    <mat-label>Width</mat-label>
+    <input type="number" matInput placeholder="Ex. 10" formControlName="width"
+    (blur)="logValidationErrors()">
+    <mat-error *ngIf="formErrors.width">
+      {{ formErrors.width }}
+    </mat-error>
+  </mat-form-field>
+
+
+
+  <button mat-raised-button color="primary" [disabled]="shipForm.invalid" >Save</button>
+
+</form>
+
+
+
+<!-- <form class="form-horizontal" [formGroup]="shipForm" (ngSubmit)="onShipAdded()">
+  <div class="panel panel-primary">
+    <div class="panel-heading">
+      <h3 class="panel-title">Create Ship</h3>
+    </div>
+    <div class="panel-body">
+
+      <div class="form-group" [ngClass]="{
+          'has-error': formErrors.name
+        }">
+        <label for="name" class="col-sm-2 control-label">Name</label>
+        <div class="col-sm-8">
+          <input id="name" type="text" class="form-control" formControlName="name"
+            (blur)="logValidationErrors()" />
+          <span class="help-block">
+            <span *ngIf="formErrors.name">{{ formErrors.name }}.</span>
+          </span>
+        </div>
+      </div>
+
+
+      <div class="form-group" class="form-group" [ngClass]="{
+          'has-error': formErrors.length
+        }">
+        <label for="length" class="col-sm-2 control-label">Length</label>
+        <div class="col-sm-8">
+          <input id="length" type="number" class="form-control" formControlName="length" (blur)="logValidationErrors()" />
+          <span class="help-block">
+            <span *ngIf="formErrors.length">{{ formErrors.length }}.</span>
+          </span>
+        </div>
+      </div>
+
+
+      <div class="form-group" class="form-group" [ngClass]="{
+        'has-error': formErrors.code
+      }">
+      <label for="code" class="col-sm-2 control-label">code</label>
+      <div class="col-sm-8">
+        <input id="code" type="text" class="form-control" formControlName="code" (blur)="logValidationErrors()" />
+        <span class="help-block">
+          <span *ngIf="formErrors.code">{{ formErrors.code }}.</span>
+        </span>
+      </div>
+    </div>
+
+    <div class="form-group" class="form-group" [ngClass]="{
+      'has-error': formErrors.width
+    }">
+    <label for="width" class="col-sm-2 control-label">Width</label>
+    <div class="col-sm-8">
+      <input id="width" type="number" class="form-control" formControlName="width" (blur)="logValidationErrors()" />
+      <span class="help-block">
+        <span *ngIf="formErrors.width">{{ formErrors.width }}.</span>
+      </span>
+    </div>
+  </div>
+
+    </div>
+    <div class="panel-footer">
+      <button mat-raised-button color="primary" [disabled]="shipForm.invalid" >Save</button>
+    </div>
+  </div>
+</form> -->

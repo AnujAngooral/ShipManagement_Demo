@@ -1,0 +1,132 @@
+
+.page-404 .entry-wraper {
+    min-height: 500px;
+}
+.entry-wraper, .entry-header, .single-comment {
+    max-width: 800px;
+    margin: 0 auto;
+}
+.entry-wraper {
+    position: relative;
+}
+.mb-5, .my-5 {
+    margin-bottom: 3rem !important;
+}
+
+
+.page-404 .entry-wraper h1 {
+    font-size: 8em !important;
+}
+
+a:hover, a:active, a:focus, .mobi-menu .current-menu-item a, .mobi-menu.act ul li.open-submenu > a, .widget-about i, .page-404 h1, button.owl-prev:hover i, button.owl-next:hover i, .link-green, .btn-green, .copyright a, .entry-main-content a {
+    color: #03a87c !important;
+    fill: #03a87c !important;
+}
+.text-center {
+    text-align: center !important;
+}
+/* .mt-5, .my-5 {
+    margin-top: 3rem !important;
+} */
+.mb-3, .my-3 {
+    margin-bottom: 1rem !important;
+}
+
+
+
+.page-404 .search-form {
+    max-width: 400px;
+    margin: 0 auto;
+    line-height: 40px;
+    padding-left: 15px;
+}
+
+.search-form.open-search {
+    border: 1px solid rgba(0,0,0,.34);
+}
+.top-menu a, .searh-toggle, .search-form {
+    color: rgba(0,0,0,.5);
+    font-size: 0.875rem;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+    letter-spacing: 0.1px;
+    line-height: 30px;
+}
+.search-form {
+    border-radius: 50px;
+}
+.mb-5, .my-5 {
+    margin-bottom: 3rem !important;
+}
+
+.d-lg-flex {
+    display: -ms-flexbox !important;
+    display: flex !important;
+}
+*, *::before, *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+*, *::before, *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+user agent stylesheet
+i {
+    font-style: italic;
+}
+.page-404 .search-form {
+    max-width: 400px;
+    margin: 0 auto;
+    line-height: 40px;
+    padding-left: 15px;
+}
+
+
+
+input.search_field {
+    background: none;
+    height: 40px;
+    border: 0;
+    transition-duration: 0.2s;
+    max-width: 300px;
+    color: rgba(0,0,0,.54) !important;
+}
+
+input {
+    -webkit-appearance: none;
+    appearance: none;
+    border-radius: 0px;
+    height: 40px;
+    font-size: 16px;
+    padding: 7px 15px;
+    background: white;
+    border: 1px solid #e1e1e1;
+    -webkit-transition: 0.4s;
+    -o-transition: 0.4s;
+    transition: 0.4s;
+    width: 100%;
+    color: rgba(0,0,0,0.54);
+}
+button, input {
+    overflow: visible;
+}
+input, button, select, optgroup, textarea {
+    margin: 0;
+    font-family: inherit;
+    font-size: inherit;
+    line-height: inherit;
+}
+*, *::before, *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}

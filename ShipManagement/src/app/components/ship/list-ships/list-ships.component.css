@@ -1,0 +1,19 @@
+ table {
+  width: 80%;
+ margin: 20px auto;
+ margin-bottom: 0px;
+}
+
+th.mat-sort-header-sorted {
+  color: black;
+}
+th.mat-sort-header-sorted {
+  color: black;
+}
+
+
+ .mat-paginator{
+  width: 80%;
+  margin: 20px auto;
+  margin-top: 0px;
+}
