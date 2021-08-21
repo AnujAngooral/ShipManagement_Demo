@@ -1,0 +1,43 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31605.320
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "shipmanagement.api", "shipmanagement.api\shipmanagement.api.csproj", "{70566161-498A-481E-92D1-F7278FD6A4EF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "shipmanagement.viewmodels", "shipmanagement.viewmodels\shipmanagement.viewmodels.csproj", "{F0B89E00-83D5-4C7A-A26F-12F23D171224}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "shipmanagement.services", "shipmanagement.services\shipmanagement.services.csproj", "{6466C40D-4E0B-4431-A996-E3904BA44968}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "shipmanagement.dal", "shipmanagement.dal\shipmanagement.dal.csproj", "{42820F20-12D9-4111-BFDF-37C27D6D516C}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{70566161-498A-481E-92D1-F7278FD6A4EF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{70566161-498A-481E-92D1-F7278FD6A4EF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{70566161-498A-481E-92D1-F7278FD6A4EF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{70566161-498A-481E-92D1-F7278FD6A4EF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F0B89E00-83D5-4C7A-A26F-12F23D171224}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F0B89E00-83D5-4C7A-A26F-12F23D171224}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F0B89E00-83D5-4C7A-A26F-12F23D171224}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F0B89E00-83D5-4C7A-A26F-12F23D171224}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6466C40D-4E0B-4431-A996-E3904BA44968}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6466C40D-4E0B-4431-A996-E3904BA44968}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6466C40D-4E0B-4431-A996-E3904BA44968}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6466C40D-4E0B-4431-A996-E3904BA44968}.Release|Any CPU.Build.0 = Release|Any CPU
+		{42820F20-12D9-4111-BFDF-37C27D6D516C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{42820F20-12D9-4111-BFDF-37C27D6D516C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{42820F20-12D9-4111-BFDF-37C27D6D516C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{42820F20-12D9-4111-BFDF-37C27D6D516C}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {C1825A68-490B-44C7-80C9-37162B4280BA}
+	EndGlobalSection
+EndGlobal

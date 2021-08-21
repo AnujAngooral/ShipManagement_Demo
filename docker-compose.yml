@@ -1,0 +1,78 @@
+# Run docker-compose build
+# Run docker-compose up
+# Live long and prosper
+
+version: '3.1'
+
+services:
+
+  node:
+    container_name: nodeapp
+    image: nodeapp
+    build:
+      context: ./ShipManagement
+      dockerfile: ./Dockerfile
+    environment:
+      - NODE_ENV=development
+    ports:
+      - "3000:80"
+    networks:
+      - app-network
+
+  aspnet:
+    container_name: 'aspnetcoreapp'
+    image: 'aspnetcoreapp'
+    build:
+      context: ./ShipManagementAPI
+      dockerfile: shipmanagement.api/Dockerfile
+    ports:
+     - "5005:5005"
+    networks:
+      - app-network
+
+networks:
+  app-network:
+    driver: bridge
+
+
+# # Run docker-compose build
+# # Run docker-compose up
+# # Live long and prosper
+
+# version: '3.1'
+
+# services:
+
+#   nginx:
+#     container_name: nginx
+#     image: nginx
+#     build:
+#       context: .
+#       dockerfile: nginx/nginx.dockerfile
+#     volumes:
+#       - ./dist/ShipManagement:/usr/share/nginx/html
+#     ports:
+#       - "80:80"
+#       - "443:443"
+
+#     networks:
+#       - app-network
+
+#   node:
+#     container_name: nodeapp
+#     image: nodeapp
+#     build:
+#       context: ./ShipManagement
+#       dockerfile: Dockerfile
+#     volumes:
+#       - ./ShipManagement:/var/www/angularnoderestfulservice
+#     environment:
+#       - NODE_ENV=development
+#     ports:
+#       - "3000:3000"
+#     networks:
+#       - app-network
+   
+# networks:
+#   app-network:
+#     driver: bridge
