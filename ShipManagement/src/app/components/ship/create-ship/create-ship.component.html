@@ -34,7 +34,7 @@
 
   <mat-form-field class="ship-full-width" appearance="fill">
     <mat-label>Length</mat-label>
-    <input type="number" matInput placeholder="Ex. 10" formControlName="length"
+    <input type="text" matInput placeholder="Ex. 10" formControlName="length"
     (blur)="logValidationErrors()">
     <mat-error *ngIf="formErrors.length">
       {{ formErrors.length }}
@@ -45,7 +45,7 @@
 
   <mat-form-field class="ship-full-width" appearance="fill">
     <mat-label>Width</mat-label>
-    <input type="number" matInput placeholder="Ex. 10" formControlName="width"
+    <input type="text" matInput placeholder="Ex. 10" formControlName="width"
     (blur)="logValidationErrors()">
     <mat-error *ngIf="formErrors.width">
       {{ formErrors.width }}

@@ -38,9 +38,9 @@ export class CreateShipComponent implements OnInit {
   ngOnInit() {
     // Initialise the create ship form with default empty values and validations.
     this.shipForm = this.fb.group({
-      name: ['', Validators.required],
-      length: ['', [Validators.required]],
-      width: ['', Validators.required],
+      name: ['', [Validators.required, Validators.minLength(2), Validators.maxLength(250) ]],
+      length: ['', [Validators.required,Validators.maxLength(6),Validators.pattern('[0-9]*')]],
+      width: ['', [Validators.required,Validators.maxLength(6),Validators.pattern('[0-9]*')]],
       code: ['',[Validators.required,Validators.pattern('\\b[A-Z]{4}[-][0-9]{4}[-][A-Z0-9]{2}\\b')],],
     });
 
@@ -88,22 +88,22 @@ export class CreateShipComponent implements OnInit {
       const shipToAdd: IShip = {
         id: this.ship?.id,
         name: this.shipForm.get('name')?.value,
-        width: this.shipForm.get('width')?.value,
-        length: this.shipForm.get('length')?.value,
+        length:  +this.shipForm.get('length')?.value ,
+        width: +this.shipForm.get('width')?.value ,
         code: this.shipForm.get('code')?.value,
       };
 
       // Create new or update based on the ship id.
-      if (shipToAdd && shipToAdd.id > 0) {
-        this.addship(shipToAdd);
-      } else {
+      if (shipToAdd && shipToAdd.id &&  shipToAdd.id> 0) {
         this.updateShip(shipToAdd);
+      } else {
+        this.addship(shipToAdd);
       }
     }
   }
 
-  // Update the ship
-  private updateShip(shipToAdd: IShip) {
+// Create a new ship
+  private addship(shipToAdd: IShip) {
     this.shipService.addShip(shipToAdd).subscribe((data) => {
 
       this.notifyService.success(`Ship added successfully.`);
@@ -117,8 +117,9 @@ export class CreateShipComponent implements OnInit {
       });
   }
 
-  // Create a new ship
-  private addship(shipToAdd: IShip) {
+
+    // Update the ship
+  private updateShip(shipToAdd: IShip) {
     this.shipService
       .updateShip(shipToAdd, shipToAdd.id)
       .subscribe((data) => {
@@ -136,6 +137,6 @@ export class CreateShipComponent implements OnInit {
   // Form validation
   logValidationErrors(group: FormGroup = this.shipForm): void {
     this.formErrors = this.validationService.validateForm(this.shipForm);
-
+    console.log(this.formErrors);
   }
 }

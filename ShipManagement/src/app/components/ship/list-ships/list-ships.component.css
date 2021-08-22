@@ -17,3 +17,9 @@ th.mat-sort-header-sorted {
   margin: 20px auto;
   margin-top: 0px;
 }
+.parent {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}

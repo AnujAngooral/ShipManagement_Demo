@@ -7,9 +7,13 @@ export const ValidationMessages:Record<string, Record<string,string> > = {
   },
   length: {
     required: 'Length is required',
+    maxlength: 'Max length is 6 digits',
+    pattern: 'Invalid length',
   },
   width: {
     required: 'Width is required',
+    maxlength: 'Max length is 6 digits',
+    pattern: 'Invalid width',
   },
   code: {
     required: 'Code is required',

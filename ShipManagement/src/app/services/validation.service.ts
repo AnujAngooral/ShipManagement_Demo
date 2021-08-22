@@ -5,9 +5,9 @@ import { ValidationMessages } from '../constants/validation-messages';
 @Injectable({providedIn: 'root'})
 export class ValidationService {
 
-  errorMessage:Record< string,string> ={} ;
-  validateForm(group: FormGroup) : Record< string,string> {
 
+  validateForm(group: FormGroup) : Record< string,string> {
+   let errorMessage:Record< string,string> ={} ;
     Object.keys(group.controls).forEach((key: string) => {
       const abstractControl = group.get(key);
       if (abstractControl instanceof FormGroup) {
@@ -25,12 +25,12 @@ export class ValidationService {
 
           for (const errorKey in abstractControl.errors) {
             if (errorKey) {
-                if(!this.errorMessage[errorKey]){
-                      this.errorMessage[errorKey] = messages[errorKey];
+                if(!errorMessage[key]){
+                      errorMessage[key] = messages[errorKey];
                 }
                 else{
-                  var existingMessage=this.errorMessage[errorKey];
-                  this.errorMessage[errorKey]  = existingMessage +' '  +messages[errorKey] ;
+                  var existingMessage=errorMessage[key];
+                  errorMessage[key]  = existingMessage +' -- '  +messages[errorKey] ;
                 }
             }
           }
@@ -38,6 +38,6 @@ export class ValidationService {
       }
     });
 
-    return this.errorMessage;
+    return errorMessage;
   }
 }
