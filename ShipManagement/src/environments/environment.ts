@@ -4,7 +4,7 @@
 import { NgxLoggerLevel } from 'ngx-logger';
 export const environment = {
   production: false,
-  baseUrl: 'http://localhost:5005/api/',
+  baseUrl: 'http://localhost:5003/api/',
   logLevel: NgxLoggerLevel.TRACE,
   serverLogLevel: NgxLoggerLevel.OFF,
   snackBarDurationInSeconds:5

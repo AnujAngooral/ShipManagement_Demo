@@ -64,7 +64,7 @@ namespace shipmanagement.api.Controllers
             var result = await IShipService.UpdateAsync(model, id);
 
             if (result.IsSuccess)
-                return CreatedAtRoute("get", new { id = result.Ship.Id }, result.Ship);
+                return Ok(result.Ship);
 
             return BadRequest(result.ErrorMessage);
 
@@ -118,6 +118,6 @@ namespace shipmanagement.api.Controllers
 
         }
 
-        
+
     }
 }

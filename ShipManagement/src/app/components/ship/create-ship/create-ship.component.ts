@@ -59,8 +59,9 @@ export class CreateShipComponent implements OnInit {
   // Gets the detail of a ship based on the id.
   getShip(id: number) {
     this.shipService.getShip(id).subscribe((ship: IShip) => {
-      this.ediShip(ship);
-      (this.ship = ship)
+      this.ship = ship;
+      this.ediShip(this.ship);
+
     },
       (error) => {
         this.logger.error(`${error}`);

@@ -81,7 +81,7 @@ namespace shipmanagement.services.Impl
 
                 var isAlreadyExist = await _shipRepository.GetAsync(x => x.Name.ToLower() == ship.Name.Trim().ToLower() ||
                                                       x.Code.ToLower() == ship.Code.ToLower());
-                if (isAlreadyExist.Id != id)
+                if (isAlreadyExist!=null && isAlreadyExist.Id != id)
                     throw new Exception("Ship name or code already exist.");
 
                 if (shipDTO != null)

@@ -49,7 +49,6 @@ describe('ListShipsComponent', () => {
       ],
       providers: [
         { provide: ShipService, useClass: MockShipService },
-        MatSnackBar,
         { provide: Router, useValue: mockRouter},
         NotifyService,
         { provide: LocationStrategy, useClass: MockLocationStrategy },

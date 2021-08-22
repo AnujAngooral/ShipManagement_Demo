@@ -46,4 +46,10 @@ describe('AppComponent', () => {
   //   const compiled = fixture.nativeElement as HTMLElement;
   //   expect(compiled.querySelector('.content span')?.textContent).toContain('ShipManagement app is running!');
   // });
+  afterEach(() => {
+    const fixture = TestBed.createComponent(AppComponent);
+    if (fixture.nativeElement && 'remove' in fixture.nativeElement) {
+      (fixture.nativeElement as HTMLElement).remove();
+    }
+  });
 });
