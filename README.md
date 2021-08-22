@@ -10,7 +10,7 @@
  ## Installation
 
 Open the command line prompt and navigate to the code location(where you have to download the code).
-There you will see a docker-compose file. This contains the inrcution to create a docker containser for the application.
+There you will see a docker-compose file. This contains the instructions to create a docker container for the application.
 Run the following command in the command line.
 
 ![docker](docker.png)
