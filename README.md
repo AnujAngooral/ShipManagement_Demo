@@ -5,12 +5,15 @@
 1) **ShipManagement**: This is the frontend site made in Angular language.
 2) **ShipManagementAPI**: This project is created in Asp.Net Core Web API.
    
+![code](code.png)
 
  ## Installation
 
 Open the command line prompt and navigate to the code location(where you have to download the code).
 There you will see a docker-compose file. This contains the inrcution to create a docker containser for the application.
 Run the following command in the command line.
+
+![docker](docker.png)
 
  ```
 docker-compose up
