@@ -37,4 +37,4 @@ https://anujangooral-shipmanagement.azurewebsites.net
 
 In case you are running the application locally without the docker, then the angular application will try to connect the API at http://localhost:5003. Make sure you run the API as well using the vs code or vs 2019.
 
-**NOTE**: The URL to Web API is configured in the environment.ts file in the angular application. Right now, I am not using the custom docker network which supports the communication between the containsers using their names.
+**NOTE**: The URL to Web API is configured in the environment.ts file in the angular application.
