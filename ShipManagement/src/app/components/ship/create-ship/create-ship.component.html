@@ -13,7 +13,7 @@
 
   <mat-form-field class="ship-full-width" appearance="fill">
     <mat-label>Name</mat-label>
-    <input matInput placeholder="Ex. HPC Ship" formControlName="name"
+    <input  matInput placeholder="Ex. HPC Ship" formControlName="name"
     (blur)="logValidationErrors()">
 
    <mat-error *ngIf="formErrors.name">
@@ -30,7 +30,7 @@
     <mat-error *ngIf="formErrors.code">
       {{ formErrors.code }}
     </mat-error>
-  </mat-form-field>
+  </mat-form-field> 
 
   <mat-form-field class="ship-full-width" appearance="fill">
     <mat-label>Length</mat-label>

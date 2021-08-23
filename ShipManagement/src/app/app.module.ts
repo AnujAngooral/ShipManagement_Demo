@@ -28,6 +28,7 @@ import { ValidationService } from './services/validation.service';
 
 
 
+
 @NgModule({
   declarations: [AppComponent, PageNotFoundComponent, HomeComponent, MainNavComponent],
   imports: [BrowserModule, ShipModule, AppRoutingModule, BrowserAnimationsModule,
@@ -46,6 +47,7 @@ import { ValidationService } from './services/validation.service';
     ShipService,
     MatSnackBar,
     ValidationService
+
   ],
   bootstrap: [AppComponent],
 })

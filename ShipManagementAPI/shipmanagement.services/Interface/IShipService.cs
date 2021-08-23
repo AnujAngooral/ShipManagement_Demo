@@ -14,7 +14,7 @@ namespace shipmanagement.services.Interface
         Task<(bool IsSuccess, Ship Ship, string ErrorMessage)> GetAsync(int Id);
         Task<(bool IsSuccess, string ErrorMessage)> DeleteAsync(int Id);
         Task<(bool IsSuccess, IEnumerable<Ship> Ships, string ErrorMessage)> GetAsync();
-
-        Task<(bool IsSuccess, bool isValid, string ErrorMessage)> ValidateShipName();
+        Task<(bool IsSuccess, bool isValid, string ErrorMessage)> ValidateShipName(string name);
+        Task<(bool IsSuccess, bool isValid, string ErrorMessage)> ValidateShipCode(string code);
     }
 }

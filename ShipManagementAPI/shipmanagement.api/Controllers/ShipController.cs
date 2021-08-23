@@ -118,6 +118,28 @@ namespace shipmanagement.api.Controllers
 
         }
 
+        [HttpGet]
+        [Route("ship/name/{name}/validate")]
+        public async Task<IActionResult> ValidateShipName(string name) {
 
+            var result = await IShipService.ValidateShipName(name);
+
+            if (result.IsSuccess)
+                return Ok(result.isValid);
+
+            return BadRequest(result.ErrorMessage);
+        }
+        [HttpGet]
+        [Route("ship/code/{code}/validate")]
+        public async Task<IActionResult> ValidateShipCode(string code)
+        {
+
+                var result = await IShipService.ValidateShipCode(code);
+
+            if (result.IsSuccess)
+                return Ok(result.isValid);
+
+            return BadRequest(result.ErrorMessage);
+        }
     }
 }

@@ -46,7 +46,11 @@ export class ShipService {
       return this.httpClient.delete<void>(`${this.baseURL}ship/${id}`);
      }
 
+     validateName(name:string):Observable<boolean>{
+        return this.httpClient.get<boolean>(`${this.baseURL}ship/name/${name}/validate`);
+     }
 
-
-
+     validateCode(code:string):Observable<boolean>{
+      return this.httpClient.get<boolean>(`${this.baseURL}ship/code/${code}/validate`);
+   }
 }

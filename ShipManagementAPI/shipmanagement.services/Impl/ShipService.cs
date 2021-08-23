@@ -81,16 +81,16 @@ namespace shipmanagement.services.Impl
 
                 var isAlreadyExist = await _shipRepository.GetAsync(x => x.Name.ToLower() == ship.Name.Trim().ToLower() ||
                                                       x.Code.ToLower() == ship.Code.ToLower());
-                if (isAlreadyExist!=null && isAlreadyExist.Id != id)
+                if (isAlreadyExist != null && isAlreadyExist.Id != id)
                     throw new Exception("Ship name or code already exist.");
 
                 if (shipDTO != null)
-                    {
-                        shipDTO.Name = ship.Name;
-                        shipDTO.Length = ship.Length;
-                        shipDTO.Code = ship.Code;
-                        shipDTO.Width = ship.Width;
-                    }
+                {
+                    shipDTO.Name = ship.Name;
+                    shipDTO.Length = ship.Length;
+                    shipDTO.Code = ship.Code;
+                    shipDTO.Width = ship.Width;
+                }
                 await _shipRepository.CommitAsync();
                 _logger.LogDebug("Ship has been updated successfully.");
                 return (true, ship, null);
@@ -158,9 +158,34 @@ namespace shipmanagement.services.Impl
             }
         }
 
-        public Task<(bool IsSuccess, bool isValid, string ErrorMessage)> ValidateShipName()
+        public async Task<(bool IsSuccess, bool isValid, string ErrorMessage)> ValidateShipName(string name)
         {
-            throw new NotImplementedException();
+            try
+            {
+                var existing_ship = await _shipRepository.GetAsync(x => x.Name.ToLower() == name.Trim().ToLower());
+
+                return (true, existing_ship == null ? true : false, null);
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError($"Error: {ex.Message} | {ex.StackTrace}");
+                return (false, false, ex.Message);
+            }
+        }
+
+        public async Task<(bool IsSuccess, bool isValid, string ErrorMessage)> ValidateShipCode(string code)
+        {
+            try
+            {
+                var existing_ship = await _shipRepository.GetAsync(x => x.Code.ToLower() == code.Trim().ToLower());
+
+                return (true, existing_ship == null ? true : false, null);
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError($"Error: {ex.Message} | {ex.StackTrace}");
+                return (false, false, ex.Message);
+            }
         }
     }
 }

@@ -21,9 +21,11 @@ export class ValidationService {
             abstractControl.dirty ||
             abstractControl.value !== '')
         ) {
+          console.log('key is' + key);
           const messages = ValidationMessages[key];
 
           for (const errorKey in abstractControl.errors) {
+            console.log('errorkeyis: '+errorKey);
             if (errorKey) {
                 if(!errorMessage[key]){
                       errorMessage[key] = messages[errorKey];
