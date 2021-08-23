@@ -44,8 +44,11 @@ namespace shipmanagement.api.Controllers
         {
             if (!ModelState.IsValid)
             {
+                var errorList = ModelState.Values.SelectMany(m => m.Errors)
+                                 .Select(e => e.ErrorMessage)
+                                 .ToList();
                 _logger.LogError("Error: Invalid ship");
-                return BadRequest("Invalid ship");
+                return BadRequest($"Invalid ship:  {String.Join(" , ", errorList)}");
             }
 
             var result = await IShipService.AddAsync(ship);
@@ -61,6 +64,14 @@ namespace shipmanagement.api.Controllers
         [ProducesResponseType(typeof(Ship), (int)System.Net.HttpStatusCode.Created)]
         public async Task<IActionResult> Update([FromBody] Ship model, int id)
         {
+            if (!ModelState.IsValid)
+            {
+                var errorList = ModelState.Values.SelectMany(m => m.Errors)
+                                 .Select(e => e.ErrorMessage)
+                                 .ToList();
+                _logger.LogError("Error: Invalid ship");
+                return BadRequest($"Invalid ship:  {String.Join(" , ", errorList)}");
+            }
             var result = await IShipService.UpdateAsync(model, id);
 
             if (result.IsSuccess)
@@ -120,7 +131,8 @@ namespace shipmanagement.api.Controllers
 
         [HttpGet]
         [Route("ship/name/{name}/validate")]
-        public async Task<IActionResult> ValidateShipName(string name) {
+        public async Task<IActionResult> ValidateShipName(string name)
+        {
 
             var result = await IShipService.ValidateShipName(name);
 
@@ -134,7 +146,7 @@ namespace shipmanagement.api.Controllers
         public async Task<IActionResult> ValidateShipCode(string code)
         {
 
-                var result = await IShipService.ValidateShipCode(code);
+            var result = await IShipService.ValidateShipCode(code);
 
             if (result.IsSuccess)
                 return Ok(result.isValid);

@@ -89,6 +89,12 @@ export class CreateShipComponent implements OnInit {
       length: ship.length,
       width: ship.width,
     });
+    this.shipForm.get("name")!.clearAsyncValidators();
+    this.shipForm.get("code")!.clearAsyncValidators();
+    this.shipForm.get("name")!.setValidators([Validators.required, Validators.minLength(2), Validators.maxLength(250)]);
+    this.shipForm.get("name")!.updateValueAndValidity();
+    this.shipForm.get("code")!.setValidators([Validators.required, Validators.pattern('\\b[A-Z]{4}[-][0-9]{4}[-][A-Z0-9]{2}\\b')]);
+    this.shipForm.get("code")!.updateValueAndValidity();
   }
 
 
