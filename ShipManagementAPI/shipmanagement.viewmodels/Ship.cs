@@ -16,8 +16,10 @@ namespace shipmanagement.viewmodels
 
         [Required(ErrorMessage = "Length is required")]
         [Range(1,int.MaxValue,ErrorMessage = "Length should be between 1 - 2,147,483,647")]
+        [RegularExpression(@"\d+(\.\d{1,2})?", ErrorMessage = "Invalid length! Supported format is 2212.23")]
         public decimal Length { get; set; }
         [Range(1, int.MaxValue, ErrorMessage = "Width should be between 1 - 2,147,483,647")]
+        [RegularExpression(@"\d+(\.\d{1,2})?", ErrorMessage = "Invalid width! Supported format is 2212.23")]
         [Required(ErrorMessage = "Width is required")]
         public decimal Width { get; set; }
 
