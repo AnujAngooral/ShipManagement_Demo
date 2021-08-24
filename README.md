@@ -16,7 +16,7 @@ Run the following command in the command line.
 ![docker](docker.png)
 
  ```
-docker-compose up
+docker-compose up --build
  ```
  
  Firstly, this will install the Nginx server and host the angular application.
