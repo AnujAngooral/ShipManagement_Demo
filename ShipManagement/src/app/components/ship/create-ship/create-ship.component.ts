@@ -61,9 +61,9 @@ export class CreateShipComponent implements OnInit {
   private initialiseForm() {
     this.shipForm = this.fb.group({
       name: ['', [Validators.required, Validators.minLength(2), Validators.maxLength(250)], [this.asyncShipNameValidator.existingNameValidator()]],
-      length: ['', [Validators.required, Validators.maxLength(8), Validators.pattern('[0-9]*\.[0-9]{2}')]],
-      width: ['', [Validators.required, Validators.maxLength(8), Validators.pattern('[0-9]*\.[0-9]{2}')]],
-      code: ['', [Validators.required, Validators.pattern('\\b[A-Z]{4}[-][0-9]{4}[-][A-Z0-9]{2}\\b')], [this.asyncShipNameValidator.existingCodeValidator()]],
+      length: ['', [Validators.required, Validators.maxLength(8), Validators.pattern('[0-9]+(\.[0-9][0-9]?)?')]],
+      width: ['', [Validators.required, Validators.maxLength(8), Validators.pattern('[0-9]+(\.[0-9][0-9]?)?')]],
+      code: ['', [Validators.required, Validators.pattern('\\b[A-Z]{4}[-][0-9]{4}[-][A-Z]{1}[0-9]{1}\\b')], [this.asyncShipNameValidator.existingCodeValidator()]],
     });
   }
 
