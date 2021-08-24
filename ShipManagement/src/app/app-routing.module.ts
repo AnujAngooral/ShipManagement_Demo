@@ -8,7 +8,7 @@ import { ShipRoutingModule } from './components/ship/ship-routing.module';
 import { ListShipsComponent } from './components/ship/list-ships/list-ships.component';
 
 const routes: Routes = [
-  { path: '', component: ListShipsComponent },
+  { path: '', component: HomeComponent },
   {path:'**', component:PageNotFoundComponent}
 ];
 

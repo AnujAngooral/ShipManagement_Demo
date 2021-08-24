@@ -1,0 +1,10 @@
+.home-margin{margin:30px 30px 40px;}
+.home-div-margin{margin-top:30px;}
+.home-margin a {
+    color: #673ab7;
+    text-decoration: none;
+  }
+  .home-margin h2 {
+    color: #673ab7;
+    font-weight: bold;
+  }
