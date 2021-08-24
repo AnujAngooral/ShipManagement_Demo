@@ -9,12 +9,12 @@ export const ValidationMessages:Record<string, Record<string,string> > = {
   length: {
     required: 'Length is required',
     maxlength: 'Max length is 6 digits',
-    pattern: 'Invalid length',
+    pattern: 'Invalid length supported format 12.23',
   },
   width: {
     required: 'Width is required',
     maxlength: 'Max length is 6 digits',
-    pattern: 'Invalid width',
+    pattern: 'Invalid width supported format 12.23',
   },
   code: {
     required: 'Code is required',

@@ -17,10 +17,10 @@ namespace shipmanagement.dal.dto
         public string Name { get; set; }
 
         [Required(ErrorMessage = "Length is required")]
-        public int Length { get; set; }
+        public decimal Length { get; set; }
 
         [Required(ErrorMessage = "Width is required")]
-        public int Width { get; set; }
+        public decimal Width { get; set; }
 
         [Required(ErrorMessage = "Code is required")]
         [MaxLength(250, ErrorMessage = "Code cannot be greater than 15 characters")]
